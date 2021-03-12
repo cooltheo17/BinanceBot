@@ -48,6 +48,7 @@ if(choise == 4 or choise == 5):
     candles = client.get_historical_klines("LTCUSDT", Client.KLINE_INTERVAL_15MINUTE, "10 days ago UTC")
     for candlestick in candles:
         candlestick_writer.writerow(candlestick)
-if(choise <= 1 or choise >=5):            
-
-       
+if(choise < 1 or choise >5):            
+    print("Error please try again.")
+else:            
+    print("Succesfully finished!")       

@@ -43,7 +43,7 @@ while(1):
             client.cancel_order(symbol='BTCUPUSDT',orderId=orderId)
             time.sleep(10)    
         #Buy BTCDOWN
-        balance_BTCDOWN = round(float(client.get_asset_balance(asset='BTCDOWN').get('free')),2)
+        balance_BTCDOWN = round(float(client.get_asset_balance(asset='BTCDOWN').get('free')),2)+round(float(client.get_asset_balance(asset='BTCDOWN').get('locked')),2)
         if(balance_BTCDOWN < 300):
             print("Selling Point")
             buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
@@ -54,7 +54,7 @@ while(1):
             stopLossPrice = round(buyingPrice*0.97,4)
             takeProfitPrice = round(buyingPrice*1.08,4)
             client.order_oco_sell(symbol='BTCDOWNUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC') 
-    elif macd[i] > 0 and macd[i-1] < 0 and float(macd[i]) > 0.10:    
+    elif macd[i] > 0 and macd[i-1] < 0 and float(macd[i]) > 0.10:  
         #Sell any BTCDOWN
         balance_BTCDOWN = round(float(client.get_asset_balance(asset='BTCDOWN').get('free')),2)+round(float(client.get_asset_balance(asset='BTCDOWN').get('locked')),2)
         if (balance_BTCDOWN > 0.1):
@@ -67,7 +67,7 @@ while(1):
             client.cancel_order(symbol='BTCDOWNUSDT',orderId=orderId)
             time.sleep(10)    
         #Buy BTCUP
-        balance_BTCUP = round(float(client.get_asset_balance(asset='BTCUP').get('free')),2)
+        balance_BTCUP = round(float(client.get_asset_balance(asset='BTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='BTCUP').get('locked')),2)
         if(balance_BTCUP < 0.12):
             print("Buying Point")
             buyingPrice = round(float(client.get_avg_price(symbol='BTCUPUSDT').get('price')),3)

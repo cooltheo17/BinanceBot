@@ -30,7 +30,7 @@ print("Staring Bot")
 print("================")
 while(1):
     #We are at selling point
-    if macd[i] < 0 and macd[i-1] > 0 and float(macd[i]) < -0.10:
+    if macd[i] < 0 and macd[i-1] > 0 and float(macd[i]) < -1:
         #Cancel any BTCUP orders
         OpenOrder = client.get_open_orders(symbol='BTCUPUSDT')
         if(len(OpenOrder) != 0):
@@ -54,7 +54,7 @@ while(1):
             stopLossPrice = round(buyingPrice*0.97,4)
             takeProfitPrice = round(buyingPrice*1.08,4)
             client.order_oco_sell(symbol='BTCDOWNUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC') 
-    elif macd[i] > 0 and macd[i-1] < 0 and float(macd[i]) > 0.10:  
+    elif macd[i] > 0 and macd[i-1] < 0 and float(macd[i]) > 1:  
         #Cancel any BTCDOWN orders
         OpenOrder = client.get_open_orders(symbol='BTCDOWNUSDT')
         if(len(OpenOrder) != 0):
@@ -78,6 +78,6 @@ while(1):
             stopLossPrice = round(buyingPrice*0.97,3)
             takeProfitPrice = round(buyingPrice*1.08,3)
             client.order_oco_sell(symbol='BTCUPUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
-    time.sleep(17)             
+    time.sleep(177)             
 
 

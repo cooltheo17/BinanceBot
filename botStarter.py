@@ -19,7 +19,7 @@ def priceUpdater():
 
 print("Staring Bot")
 print("================")
-while(1):
+while(True):
     client = Client(config.API_KEY, config.API_SECRET)
     priceUpdater()
     my_data = genfromtxt('BTC_LATEST.csv', delimiter=',')
@@ -72,14 +72,14 @@ while(1):
         if(balance_BTCUP < 0.12):
             print("Buying Point")
             buyingPrice = round(float(client.get_avg_price(symbol='BTCUPUSDT').get('price')),3)
-            balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-1
-            print(balance)
+            balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
             quantity=round(balance/buyingPrice,2)
             client.order_market_buy(symbol='BTCUPUSDT',quantity=quantity)
             time.sleep(5)
             stopLossPrice = round(buyingPrice*0.97,3)
             takeProfitPrice = round(buyingPrice*1.08,3)
             client.order_oco_sell(symbol='BTCUPUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
+    print(macd[i])
     time.sleep(177)             
 
 

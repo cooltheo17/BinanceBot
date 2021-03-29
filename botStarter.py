@@ -1,3 +1,6 @@
+# Disclamer!
+# This bot is designed to be informational and educational only and do not constitute investment advice.
+# Use at your own risk. 
 import config
 import csv
 import numpy

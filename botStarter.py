@@ -1,4 +1,4 @@
-# Disclamer!
+# Disclaimer!
 # This bot is designed to be informational and educational only and do not constitute investment advice.
 # Use at your own risk. 
 import config

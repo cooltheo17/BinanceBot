@@ -94,7 +94,7 @@ def marketEnterLTC(enterNow):
         time.sleep(117)              
 
 #Choose a coin for the bot to perform trades on
-print("This program will fetch data for the coin selected for the last 10 days in 15 minute candles.")
+print("\nThis program will automatically perform buy and sell orders for theese coins:")
 print("[1] - BTC")
 print("[2] - LTC")
 choise = int(input("Please enter your number:"))

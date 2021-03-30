@@ -2,8 +2,9 @@
 A set of tools created in Python that link to the Binance API to get data and perfrom automatic buy and sell orders for Bitcoin and other cryptocurrencies using the MACD index. 
 
 ## DataGetter
-<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="left"
-width="931" height="231">
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="center"
+width="820" height="220">
+
 ## ParFinder
 
 ## 📦 Installation

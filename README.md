@@ -2,8 +2,8 @@
 A set of tools created in Python that link to the Binance API to get data and perfrom automatic buy and sell orders for Bitcoin and other cryptocurrencies using the MACD index. 
 
 
-<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="left"
+width="120" height="178">
 
 
 ## 📦 Installation

@@ -15,7 +15,7 @@ width="820" height="220">
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-3.png" align="center"
 width="370" height="840">
 
-## ParFinder
+## BotStarter
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="center"
 width="820" height="460">
 

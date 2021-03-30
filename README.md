@@ -27,4 +27,4 @@ width="820" height="460">
 
 ## ⚠️ Disclaimer!
 This bot is designed to be informational and educational only and do not constitute investment advice.
-# Use at your own risk. 
+Use at your own risk. 

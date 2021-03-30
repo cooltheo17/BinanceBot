@@ -3,7 +3,7 @@ A set of tools created in Python that link to the Binance API to get data and pe
 
 ## 📦 Installation
 Install these libraries:
-`pip3 install python-binance`\n
+`pip3 install python-binance`<br>
 `pip3 isntall TA-Lib`
 
 ## DataGetter

@@ -1,6 +1,11 @@
 # Binance Trading Tools
 A set of tools created in Python that link to the Binance API to get data and perfrom automatic buy and sell orders for Bitcoin and other cryptocurrencies using the MACD index. 
 
+## 📦 Installation
+Install these libraries:
+`pip3 install python-binance`
+`pip3 isntall TA-Lib`
+
 ## DataGetter
 Tool that allows users to fetch price data for 15 minute candles about cryptocurrencies.
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="center"
@@ -10,9 +15,6 @@ width="820" height="220">
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-3.png" align="center"
 width="370" height="840">
 
-## 📦 Installation
-
-Add this Swift package in Xcode using its Github repository url. (File > Swift Packages > Add Package Dependency...)
 
 # Instractions
 1. Add your Binance API key and API secret in the config.py file.

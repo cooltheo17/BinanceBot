@@ -7,7 +7,7 @@ Tool that allows users to fetch price data for 15 minute candles about cryptocur
 width="820" height="220">
 
 ## ParFinder
-<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-3.png" align="middle"
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-3.png" align="center"
 width="370" height="840">
 
 ## 📦 Installation

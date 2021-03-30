@@ -1,5 +1,14 @@
-# BinanceBot
-A bot created in python that links to the Binance API and performs automatic buy and sell orders using the MACD index.
+# Binance Trading Tools
+A set of tools created in Python that link to the Binance API to get data and perfrom automatic buy and sell orders for Bitcoin and other cryptocurrencies using the MACD index. 
+
+
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="right"
+     alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
+
+
+## 📦 Installation
+
+Add this Swift package in Xcode using its Github repository url. (File > Swift Packages > Add Package Dependency...)
 
 # Instractions
 1. Add your Binance API key and API secret in the config.py file.

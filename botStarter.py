@@ -85,7 +85,7 @@ def marketEnterLTC(enterNow):
         
         #Check if MACD is performing an interection
         if (float(macd[i]) < -0.07 and float(macd[i-1]) > 0) or (float(macd[i]) > 0.07 and float(macd[i-1]) < 0):
-            print('\033[33;94m- Entering market -\033[0m',)
+            print('\033[33;94m- Entering market -\033[0m')
             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
             enterNow=1
         else:
@@ -97,8 +97,8 @@ def marketEnterLTC(enterNow):
 #Choose a coin for the bot to perform trades on
 try:
     print("\nThis program will automatically perform buy and sell orders for theese coins:")
-    print("[1] - BTC")
-    print("[2] - LTC")
+    print('[1] -\033[38;5;208m BTC\033[0m')
+    print('[2] -\033[38;5;122m LTC\033[0m')
     choise = int(input("Please enter your number:"))
 
     #Start the bot
@@ -146,7 +146,7 @@ try:
                         #Buy BTCDOWN
                         balance_BTCDOWN = round(float(client.get_asset_balance(asset='BTCDOWN').get('free')),2)+round(float(client.get_asset_balance(asset='BTCDOWN').get('locked')),2)
                         if(balance_BTCDOWN < 300):
-                            print('\033[33;91m- Selling Point -\033[0m',)
+                            print('\033[33;91m- Selling Point -\033[0m')
                             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                             buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
                             balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
@@ -174,7 +174,7 @@ try:
                         #Buy BTCUP
                         balance_BTCUP = round(float(client.get_asset_balance(asset='BTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='BTCUP').get('locked')),2)
                         if(balance_BTCUP < 0.12):
-                            print('\033[33;92m- Buying Point -\033[0m',)
+                            print('\033[33;92m- Buying Point -\033[0m')
                             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                             buyingPrice = round(float(client.get_avg_price(symbol='BTCUPUSDT').get('price')),3)
                             balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
@@ -285,13 +285,13 @@ try:
                             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                     time.sleep(30)                  
                 except ConnectionError as e: 
-                    print('\033[0;30;41m- Network Error Occured -\033[0m',)
+                    print('\033[0;30;41m- Network Error Occured -\033[0m')
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                     time.sleep(300)
                 
                 except BinanceAPIException as e:
-                    print('\033[1;30;41m- Binance API Error Occured -\033[0m',)
+                    print('\033[1;30;41m- Binance API Error Occured -\033[0m')
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                     time.sleep(300)
@@ -299,7 +299,7 @@ try:
                     print('\033\n[1;30;46m- Exiting -\033[0m',)
                     exit()            
     else:
-        print('\033[0;30;41m- Error please enter a valid option -\033[0m',)
+        print('\033[0;30;41m- Error please enter a valid option -\033[0m')
 except KeyboardInterrupt:
-    print('\033\n[1;30;46m- Exiting -\033[0m',)
+    print('\033\n[1;30;46m- Exiting -\033[0m')
     exit()        

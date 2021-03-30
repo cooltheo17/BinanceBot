@@ -1,10 +1,13 @@
 # Binance Trading Tools
 A set of tools created in Python that link to the Binance API to get data and perfrom automatic buy and sell orders for Bitcoin and other cryptocurrencies using the MACD index. 
 
-
-<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="left"
-width="400" height="200">
-
+## DataGetter
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="left"
+width="931" height="231">
+## ParFinder
+## DataGetter
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="left"
+width="931" height="231">
 
 ## 📦 Installation
 

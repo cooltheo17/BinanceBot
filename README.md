@@ -3,7 +3,7 @@ A set of tools created in Python that link to the Binance API to get data and pe
 
 
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="left"
-width="120" height="178">
+width="400" height="200">
 
 
 ## 📦 Installation

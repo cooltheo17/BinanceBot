@@ -15,6 +15,9 @@ width="820" height="220">
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-3.png" align="center"
 width="370" height="840">
 
+## ParFinder
+<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-1.png" align="center"
+width="820" height="460">
 
 # Instractions
 1. Add your Binance API key and API secret in the config.py file.

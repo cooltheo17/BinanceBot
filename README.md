@@ -20,10 +20,10 @@ width="370" height="840">
 width="820" height="460">
 
 ## 📃 Instractions
-1. Add your Binance API key and API secret in the config.py file.
-2. Run the dataGetter.py file using python3.
-3. Run the parFunder.py file using python3.
-(Note to run the statGetter data for all coins is needed.
+1. After isntalling the libraries add your Binance API key and secret in the config.py file.
+2. Run the dataGetter.py file using python3 and select which coin you wish to fetch data for.
+3. Run the parFunder.py file using python3 after fetching data for all coins and see which coin is the most profitable.
+4. Run the botSTarter.py file using python3 to start the Bot with the desired coin.
 
 ## ⚠️ Disclaimer!
 This bot is designed to be informational and educational only and do not constitute investment advice.

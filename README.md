@@ -5,9 +5,6 @@ A set of tools created in Python that link to the Binance API to get data and pe
 <img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="left"
 width="931" height="231">
 ## ParFinder
-## DataGetter
-<img src="https://raw.githubusercontent.com/cooltheo17/BinanceBot/main/images/image-2.png" align="left"
-width="931" height="231">
 
 ## 📦 Installation
 

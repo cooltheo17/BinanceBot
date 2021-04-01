@@ -74,13 +74,13 @@ def marketEnterLTC(enterNow):
     while(enterNow==0):
         
         #Get all price data
-        priceUpdaterBTC()
+        priceUpdaterLTC()
         my_data = genfromtxt('LTC_LATEST.csv', delimiter=',')
-        close_btc = my_data[:,4]
+        close_ltc = my_data[:,4]
         i=len(my_data)-1
         
         #Calculate macd values
-        allIndexes=talib.MACD(close_btc, fastperiod=12, slowperiod=26, signalperiod=9)
+        allIndexes=talib.MACD(close_ltc, fastperiod=12, slowperiod=26, signalperiod=9)
         macd=allIndexes[2]
         
         #Check if MACD is performing an interection

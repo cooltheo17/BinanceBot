@@ -208,7 +208,7 @@ try:
     elif choise == 2:
         while(True):
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at an intersection
-            marketEnterLTC(0)
+            marketEnterLTC(1)
             #Maintain bot after we get in the market
             while(True):
 

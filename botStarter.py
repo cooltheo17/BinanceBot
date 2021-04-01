@@ -275,7 +275,7 @@ try:
                             buyingPrice = round(float(client.get_avg_price(symbol='LTCUPUSDT').get('price')),3)
                             balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
                             quantity=round(balance/buyingPrice,2)
-                            client.order_market_buy(symbol='LTCUPUPUSDT',quantity=quantity)
+                            client.order_market_buy(symbol='LTCUPUSDT',quantity=quantity)
                             time.sleep(5)
                             stopLossPrice = round(buyingPrice*0.984,3)
                             takeProfitPrice = round(buyingPrice*1.07,3)

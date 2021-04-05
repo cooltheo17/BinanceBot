@@ -112,7 +112,7 @@ try:
     if choise == 1:
         while(True):
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at an intersection
-            marketEnterBTC(0)
+            marketEnterBTC(1)
 
             #Maintain bot after we get in the market
             while(True):

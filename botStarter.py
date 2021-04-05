@@ -112,7 +112,7 @@ try:
     if choise == 1:
         while(True):
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at an intersection
-            marketEnterBTC(1)
+            marketEnterBTC(0)
 
             #Maintain bot after we get in the market
             while(True):
@@ -131,7 +131,7 @@ try:
                     macd=allIndexes[2]
                     
                     #We are at selling point
-                    if float(macd[i]) < -0.5:
+                    if float(macd[i]) < -1:
                         #Cancel any BTCUP orders
                         OpenOrder = client.get_open_orders(symbol='BTCUPUSDT')
                         if(len(OpenOrder) != 0):
@@ -159,7 +159,7 @@ try:
                         else:
                             print("- Waiting -")
                             print(datetime.now().strftime(' %H:%M:%S %d-%m '))      
-                    elif float(macd[i]) > 0.5: 
+                    elif float(macd[i]) > 1: 
                         #Cancel any BTCDOWN orders
                         OpenOrder = client.get_open_orders(symbol='BTCDOWNUSDT')
                         if(len(OpenOrder) != 0):

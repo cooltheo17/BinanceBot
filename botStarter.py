@@ -44,7 +44,7 @@ def marketEnterBTC(enterNow):
         macd=allIndexes[2]
         
         #Check if MACD is performing an interection
-        if (float(macd[i]) < -10 and float(macd[i-1]) > 0) or (float(macd[i]) > 10 and float(macd[i-1]) < 0):
+        if (float(macd[i]) < -1 and float(macd[i-1]) > 0) or (float(macd[i]) > 1 and float(macd[i-1]) < 0):
             print('\033[33;94m- Entering market -\033[0m',)
             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
             enterNow=1

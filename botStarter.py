@@ -139,7 +139,8 @@ try:
                             client.cancel_order(symbol='BTCUPUSDT',orderId=orderId)
                             time.sleep(10)  
                         #Sell any BTCUP    
-                        balance_BTCUP = round(float(client.get_asset_balance(asset='BTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='BTCUP').get('locked')),2)-0.01
+                        balance_BTCUP = round(float(client.get_asset_balance(asset='BTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='BTCUP').get('locked')),2)
+                        balance_BTCUP -= 0.01
                         if (balance_BTCUP > 0.1):
                             client.order_market_sell(symbol='BTCUPUSDT',quantity=balance_BTCUP)
                             time.sleep(10)    
@@ -150,7 +151,7 @@ try:
                             print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                             buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
                             balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
-                            quantity=round(balance/buyingPrice,2)
+                            quantity=round(balance/buyingPrice,1)
                             client.order_market_buy(symbol='BTCDOWNUSDT',quantity=quantity)
                             time.sleep(5)
                             stopLossPrice = round(buyingPrice*0.984,4)
@@ -192,13 +193,13 @@ try:
                     print('\033[0;30;41m- Network Error Occured -\033[0m',)
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
-                    time.sleep(300)
+                    time.sleep(10)
                 
                 except BinanceAPIException as e:
                     print('\033[0;30;41m- Binance API Error Occured -\033[0m',)
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
-                    time.sleep(300)
+                    time.sleep(10)
                 except KeyboardInterrupt:
                     print('\033\n[2;30;45m- Exiting -\033[0m',)
                     exit()            
@@ -235,7 +236,8 @@ try:
                             client.cancel_order(symbol='LTCUPUSDT',orderId=orderId)
                             time.sleep(10)  
                         #Sell any LTCUP    
-                        balance_LTCUP = round(float(client.get_asset_balance(asset='LTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='LTCUP').get('locked')),2)-0.01
+                        balance_LTCUP = round(float(client.get_asset_balance(asset='LTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='LTCUP').get('locked')),2)
+                        balance_LTCUP -= balance_LTCUP
                         if (balance_LTCUP > 0.5):
                             client.order_market_sell(symbol='LTCUPUSDT',quantity=balance_LTCUP)
                             time.sleep(10)    
@@ -288,13 +290,13 @@ try:
                     print('\033[0;30;41m- Network Error Occured -\033[0m')
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
-                    time.sleep(300)
+                    time.sleep(10)
                 
                 except BinanceAPIException as e:
                     print('\033[1;30;41m- Binance API Error Occured -\033[0m')
                     print(e)
                     print(datetime.now().strftime(' %H:%M:%S %d-%m '))
-                    time.sleep(300)
+                    time.sleep(10)
                 except KeyboardInterrupt:
                     print('\033\n[1;30;46m- Exiting -\033[0m',)
                     exit()            

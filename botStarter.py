@@ -113,9 +113,10 @@ try:
         
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at the next intersection
         marketEnterBTC(0)
+        #Initialise start time
+        startTime = time.time()
         #Maintain bot after we get in the market
-        while(True):
-            startTime = time.time()
+        while(True): 
             try:
                 #Connect the Binance API
                 client = Client(config.API_KEY, config.API_SECRET)
@@ -215,10 +216,11 @@ try:
     ###########
     elif choise == 2:
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at an intersection
-        marketEnterLTC(1)
+        marketEnterLTC(0)
+        #Initialise start time
+        startTime = time.time()
         #Maintain bot after we get in the market
         while(True):
-            startTime = time.time()
             try:                
                 #Connect the Binance API
                 client = Client(config.API_KEY, config.API_SECRET)
@@ -235,7 +237,7 @@ try:
                 
                 #Check if candle has closed
                 if((time.time() - startTime) > 900):
-                    marketEnterBTC(0)
+                    marketEnterLTC(0)
 
                 #We are at selling point
                 if float(macd[i]) < -0.01:

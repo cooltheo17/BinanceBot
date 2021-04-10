@@ -246,8 +246,8 @@ try:
                         client.cancel_order(symbol='LTCUPUSDT',orderId=orderId)
                         time.sleep(10)  
                     #Sell any LTCUP    
-                    balance_LTCUP = round(float(client.get_asset_balance(asset='LTCUP').get('free')),2)+round(float(client.get_asset_balance(asset='LTCUP').get('locked')),2)
-                    balance_LTCUP -= balance_LTCUP
+                    balance_LTCUP = float(client.get_asset_balance(asset='LTCUP').get('free'))+float(client.get_asset_balance(asset='LTCUP').get('locked'))
+                    balance_LTCUP =  int(balance_LTCUP * 1000) / 1000
                     if (balance_LTCUP > 0.5):
                         client.order_market_sell(symbol='LTCUPUSDT',quantity=balance_LTCUP)
                         time.sleep(10)    

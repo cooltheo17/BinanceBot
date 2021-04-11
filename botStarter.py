@@ -145,7 +145,7 @@ try:
                         time.sleep(10)  
                     #Sell any BTCUP    
                     balance_BTCUP = float(client.get_asset_balance(asset='BTCUP').get('free'))+float(client.get_asset_balance(asset='BTCUP').get('locked'))
-                    balance_BTCUP =  int(balance_BTCUP * 1000) / 1000
+                    balance_BTCUP =  int(balance_BTCUP * 100) / 100
                     if (balance_BTCUP > 0.1):
                         client.order_market_sell(symbol='BTCUPUSDT',quantity=balance_BTCUP)
                         time.sleep(10)    
@@ -156,14 +156,13 @@ try:
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                         buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
                         balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
-                        quantity=int(balance*10000/buyingPrice)/10000
+                        quantity=int(balance_BTCUP * 100) / 100
                         client.order_market_buy(symbol='BTCDOWNUSDT',quantity=quantity)
                         time.sleep(5)
-                        stopLossPrice = int(buyingPrice*0.989*10000)/10000
-                        takeProfitPrice = int(buyingPrice*1.05*10000)/10000
+                        stopLossPrice = round(buyingPrice*0.99,4)
+                        takeProfitPrice = round(buyingPrice*1.05,4)
                         client.order_oco_sell(symbol='BTCDOWNUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
                         startTime = time.time()
-
                     else:
                         print("- Waiting -")
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))      
@@ -175,7 +174,7 @@ try:
                         client.cancel_order(symbol='BTCDOWNUSDT',orderId=orderId)
                         time.sleep(10)   
                     #Sell any BTCDOWN
-                    balance_BTCDOWN = round(float(client.get_asset_balance(asset='BTCDOWN').get('free')),2)+round(float(client.get_asset_balance(asset='BTCDOWN').get('locked')),2)
+                    balance_BTCDOWN = int((float(client.get_asset_balance(asset='BTCDOWN').get('free'))+float(client.get_asset_balance(asset='BTCDOWN').get('locked')))*100)/100
                     if (balance_BTCDOWN > 0.1):
                         client.order_market_sell(symbol='BTCDOWNUSDT',quantity=balance_BTCDOWN)
                         time.sleep(10)     
@@ -185,7 +184,7 @@ try:
                         print('\033[33;92m- Buying Point -\033[0m')
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                         buyingPrice = round(float(client.get_avg_price(symbol='BTCUPUSDT').get('price')),3)
-                        balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
+                        balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.7
                         quantity=round(balance/buyingPrice,2)
                         client.order_market_buy(symbol='BTCUPUSDT',quantity=quantity)
                         time.sleep(5)
@@ -203,11 +202,7 @@ try:
                 print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                 time.sleep(10)
             
-            except BinanceAPIException as e:
-                print('\033[0;30;41m- Binance API Error Occured -\033[0m',)
-                print(e)
-                print(datetime.now().strftime(' %H:%M:%S %d-%m '))
-                time.sleep(10)
+            
             except KeyboardInterrupt:
                 print('\033\n[2;30;45m- Exiting -\033[0m',)
                 exit()            
@@ -306,7 +301,11 @@ try:
                 print(e)
                 print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                 time.sleep(10)
-            
+            except BinanceAPIException as e:
+                print('\033[1;30;41m- Binance API Error Occured -\033[0m')
+                print(e)
+                print(datetime.now().strftime(' %H:%M:%S %d-%m '))
+                time.sleep(10)
             except BinanceAPIException as e:
                 print('\033[1;30;41m- Binance API Error Occured -\033[0m')
                 print(e)
@@ -323,3 +322,4 @@ except KeyboardInterrupt:
 except ValueError:
     print('\033[0;30;41m- Error please enter a valid option -\033[0m')
     exit()         
+

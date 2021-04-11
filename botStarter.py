@@ -156,11 +156,11 @@ try:
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                         buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
                         balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
-                        quantity=round(balance/buyingPrice,1)
+                        quantity=int(balance*100/buyingPrice)/100
                         client.order_market_buy(symbol='BTCDOWNUSDT',quantity=quantity)
                         time.sleep(5)
-                        stopLossPrice = round(buyingPrice*0.984,4)
-                        takeProfitPrice = round(buyingPrice*1.07,4)
+                        stopLossPrice = round(buyingPrice*0.989,4)
+                        takeProfitPrice = round(buyingPrice*1.05,4)
                         client.order_oco_sell(symbol='BTCDOWNUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
                         startTime = time.time()
 
@@ -288,12 +288,13 @@ try:
                         print('\033[33;92m- Buying Point -\033[0m',)
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                         buyingPrice = round(float(client.get_avg_price(symbol='LTCUPUSDT').get('price')),3)
-                        balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
+                        balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)
                         quantity=round(balance/buyingPrice,2)
+                        quantity = int(quantity*100)/100
                         client.order_market_buy(symbol='LTCUPUSDT',quantity=quantity)
                         time.sleep(5)
-                        stopLossPrice = round(buyingPrice*0.984,3)
-                        takeProfitPrice = round(buyingPrice*1.07,3)
+                        stopLossPrice = round(buyingPrice*0.989,3)
+                        takeProfitPrice = round(buyingPrice*1.05,3)
                         client.order_oco_sell(symbol='LTCUPUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
                         startTime = time.time()
                     else:

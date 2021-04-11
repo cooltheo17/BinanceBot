@@ -112,7 +112,7 @@ try:
     if choise == 1:
         
         #If you wish to enter market now change this to 1 otherwise it will automatically enter the market at the next intersection
-        marketEnterBTC(0)
+        marketEnterBTC(1)
         #Initialise start time
         startTime = time.time()
         #Maintain bot after we get in the market
@@ -156,11 +156,11 @@ try:
                         print(datetime.now().strftime(' %H:%M:%S %d-%m '))
                         buyingPrice = round(float(client.get_avg_price(symbol='BTCDOWNUSDT').get('price')),4)
                         balance = round(float(client.get_asset_balance(asset='USDT').get('free')),2)-0.5
-                        quantity=int(balance*100/buyingPrice)/100
+                        quantity=int(balance*10000/buyingPrice)/10000
                         client.order_market_buy(symbol='BTCDOWNUSDT',quantity=quantity)
                         time.sleep(5)
-                        stopLossPrice = round(buyingPrice*0.989,4)
-                        takeProfitPrice = round(buyingPrice*1.05,4)
+                        stopLossPrice = int(buyingPrice*0.989*10000)/10000
+                        takeProfitPrice = int(buyingPrice*1.05*10000)/10000
                         client.order_oco_sell(symbol='BTCDOWNUSDT', quantity=quantity, price=takeProfitPrice, stopPrice=stopLossPrice, stopLimitPrice=stopLossPrice, stopLimitTimeInForce='GTC')
                         startTime = time.time()
 

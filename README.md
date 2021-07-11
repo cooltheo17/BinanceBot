@@ -7,7 +7,7 @@ Install these libraries:
 <br>`pip3 install TA-Lib`
 
 ## 📃 Instractions
-1. After isntalling the libraries add your Binance API key and secret in the config.py file.
+1. After installing the libraries add your Binance API key and secret in the config.py file.
 2. Run the dataGetter.py file using python3 and select which coin you wish to fetch data for.
 3. Run the parFunder.py file using python3 after fetching data for all coins and see which coin is the most profitable.
 4. Run the botSTarter.py file using python3 to start the Bot with the desired coin.
